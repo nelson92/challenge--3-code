@@ -26,6 +26,7 @@ function generatePassword() {
 
   var upperCaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 // combine arrays into 1 big array, based on the users choices
+
   var userInput = []
 
   if (userNumbers === true) {
@@ -40,13 +41,34 @@ function generatePassword() {
   if (userLowerCase === true) {
     userInput = lowerCaseList.concat(userInput)
   }
-  // if (userNumbers === true) {
-    var index = Math.floor(Math.random() * userInput.length);
-    var userChoice = userInput[index];
-    // window.prompt("The computer chose " + userChoice);
+  
+  if (userInput.length === 0){
+    window.alert("You must choose at least 1 character type")
+    return;
 
-  // }
-  return userChoice;
+  }
+    
+    var userChoice = "";
+
+    // userChoice += userInput[index];
+    
+    for (var i = 0; i < passwordLength; i++) {
+      
+      var index = Math.floor(Math.random() * userInput.length);
+      userChoice += userInput[index];
+    }
+    writePassword(userChoice)
+    
+
+    return userChoice
+
+
+    
+    function writePassword(userChoice) {
+      var passwordText = document.querySelector("#password");
+      passwordText.value = userChoice;
+    
+    }
 
 }
 
@@ -62,14 +84,10 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
-  // what does .value mean here?
   passwordText.value = password;
 
 }
 
-// Add event listener to generate button
-// generateBtndoc.addEventListener("click", writePassword);
+
 generateBtn.addEventListener("click", writePassword);
 
-// generatePassword()
