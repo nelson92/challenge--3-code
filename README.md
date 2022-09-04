@@ -9,5 +9,5 @@ Installation: This application can be accessed by following the below link
 https://nelson92.github.io/challenge--3-code/
 
 
- ![alt text](develop/images/password_generator.png)
+ ![alt text](images/password_generator.png)
 
