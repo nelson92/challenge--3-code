@@ -8,4 +8,4 @@ WHAT DID YOU LEARN: How to write JavaScript from scrach as well as a lot of prac
 Installation: This application can be accessed by following the below link
 https://nelson92.github.io/challenge--3-code/
 
- ![alt text](Develop/password_generator.png)
+ ![alt text](Develop/images/password_generator.png)
